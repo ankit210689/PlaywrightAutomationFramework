@@ -1,0 +1,12 @@
+# Ignore Python virtual env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+reports/
+PlaywrightAutomationFramework/playwright-framework/.venv/
+*.log
+.idea/
+*.egg-info/
+__pypackages__/
+.DS_Store

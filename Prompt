@@ -1,0 +1,41 @@
+To create search_flights.py in AITesting directory using Playwright MCP, following prompt was used:
+
+Generate and execute a Playwright test framework suite to automate purchase from a retail website using pytest and Playwright MCP.
+
+Test Scenario:
+
+Launch URL: https://www.saucedemo.com
+Login with username: standard_user and password: secret_sauce
+Add all items >$10 to the cart.
+Proceed to checkout and complete the purchase.
+Fetch order details and save them to a file named order_details.txt.
+
+Implementation Requirements:
+
+Use pytest style structure (functions starting with test_).
+Execute each step interactively through Playwright MCP tools.
+Once all steps are succeeded, generate and save the final test framework folder inside 'PlaywrightAutomationFramework' directory.
+Run the saved test automatically in headed mode (browser should be visible).
+In any step, if any step or assertion got failed, identify and fix the issue then rerun until the test passes.
+
+Expected Output:
+
+A fully working Playwright automation framework in python having following structure:
+ playwright-framework/
+├── tests/                  # Test scripts (pytest files)
+│   ├── conftest.py         # Fixtures and setup/teardown
+│   ├── test_login.py
+│   └── test_dashboard.py
+├── pages/                  # Page Object Models (Locators & Actions)
+│   ├── base_page.py
+│   ├── login_page.py
+│   └── dashboard_page.py
+├── data/                   # Test data (JSON, CSV, or YAML)
+│   └── user_data.json
+├── utils/                  # Helper functions (API, DB, Logging)
+│   └── config_reader.py
+├── reports/                # Test execution reports and screenshots
+├── pytest.ini              # Pytest configuration
+├── requirements.txt        # Dependencies
+└── .env                    # Environment variables (Secrets)
+The script should automate the complete flow described above and successfully return the order details.

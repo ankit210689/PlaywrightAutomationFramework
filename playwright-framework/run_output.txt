@@ -1,0 +1,11 @@
+Launching browser (headed)...
+Cart items found: 4
+Summary collected: {'items': ['Sauce Labs Backpack', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Test.allTheThings() T-Shirt (Red)'], 'total': 'Total: $120.92'}
+Wrote report to: /Users/ankit/PycharmProjects/GitHubCopilot/PlaywrightAutomationFramework/playwright-framework/reports/order_details.txt
+Report contents:
+Sauce Labs Backpack - 
+Sauce Labs Bolt T-Shirt - 
+Sauce Labs Fleece Jacket - 
+Test.allTheThings() T-Shirt (Red) - 
+Total: Total: $120.92
+
