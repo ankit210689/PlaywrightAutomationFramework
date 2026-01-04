@@ -1,0 +1,61 @@
+Checklist:
+ 1) Create/activate venv and install dependencies (pip + Playwright browsers)
+ 2) Run test in headed mode with pytest
+ 3) Confirm test passed
+ 4) Locate and display reports/order_details.txt
+ 5) Provide reproducible run commands and notes
+====================
+What was executed (summary of actions performed):
+1) Created/used the virtual environment and installed dependencies from playwright-framework/requirements.txt.
+2) Installed Playwright browser binaries (Chromium).
+3) Ran the pytest test in headed mode (via the venv pytest).
+4) Verified that the test passed and produced reports/order_details.txt.
+5) Created a small runner run_checkout.py (standalone script) and used it to explicitly print and confirm the generated report.
+====================
+Environment used (from the venv)
+Python: 3.9.6
+pytest: 8.4.2
+playwright: 1.57.0 Location of framework root
+/Users/ankit/PycharmProjects/GitHubCopilot/PlaywrightAutomationFramework/playwright-framework
+=======================
+Commands to run (copy/paste and re-run in zsh):
+
+Create & activate venv, install deps:
+cd /Users/ankit/PycharmProjects/GitHubCopilot/PlaywrightAutomationFramework/playwright-framework
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python -m playwright install chromium
+
+=======================
+Run the pytest test (headed Chromium will open):
+# run single test file (verbose)
+.venv/bin/pytest tests/test_checkout.py -vv
+Or run the standalone runner:
+.venv/bin/python run_checkout.py
+=======================
+Respective results:
+(.venv) ankit@Ankits-MacBook-Pro playwright-framework % .venv/bin/pytest tests/test_checkout.py -vv
+=========================================================================== test session starts ===========================================================================
+platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Users/ankit/PycharmProjects/GitHubCopilot/PlaywrightAutomationFramework/playwright-framework/.venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/ankit/PycharmProjects/GitHubCopilot/PlaywrightAutomationFramework/playwright-framework
+configfile: pytest.ini
+plugins: rerunfailures-16.0.1
+collected 1 item
+
+tests/test_checkout.py::test_checkout_flow PASSED                                                                                                                   [100%]
+
+============================================================================ 1 passed in 4.73s ============================================================================
+(.venv) ankit@Ankits-MacBook-Pro playwright-framework % .venv/bin/python run_checkout.py
+Launching browser (headed)...
+Cart items found: 4
+Summary collected: {'items': ['Sauce Labs Backpack', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Test.allTheThings() T-Shirt (Red)'], 'total': 'Total: $120.92'}
+Wrote report to: /Users/ankit/PycharmProjects/GitHubCopilot/PlaywrightAutomationFramework/playwright-framework/reports/order_details.txt
+Report contents:
+Sauce Labs Backpack -
+Sauce Labs Bolt T-Shirt -
+Sauce Labs Fleece Jacket -
+Test.allTheThings() T-Shirt (Red) -
+Total: Total: $120.92
+(.venv) ankit@Ankits-MacBook-Pro playwright-framework %
